@@ -16,3 +16,11 @@ Work as a central hub for managing all the resources needed for machine learning
 - Resource Management: Centralized management of datasets, experiments, models, and deployments
 - Collaboration: Enables team collaboration by sharing resources and facilitating version control
 - Compute Management: Manages compute resources such as virtual machines, GPU clusters, and more.
+
+### Feature
+ - Components
+    - Modularity: Break down complex workflows into manageable parts focused on specific tasks (e.g., data preprocessing, model training, model deployment, etc.).
+    - Reusability: Reuse components across multiple pipelines and projects, promoting consistency and reducing repetitive work.
+    - Parameterization: Customize component behavior with inputs and parameters.
+    - Basic workflow:
+        - Using YAML file or Python script(SDK v2) to design a component and specify the behavior(e.g., name, type, inputs, outputs, command, etc. ) 
