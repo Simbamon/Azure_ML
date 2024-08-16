@@ -22,5 +22,14 @@ Work as a central hub for managing all the resources needed for machine learning
     - Modularity: Break down complex workflows into manageable parts focused on specific tasks (e.g., data preprocessing, model training, model deployment, etc.).
     - Reusability: Reuse components across multiple pipelines and projects, promoting consistency and reducing repetitive work.
     - Parameterization: Customize component behavior with inputs and parameters.
-    - Basic workflow:
+    - Basic workflow
         - Using YAML file or Python script(SDK v2) to design a component and specify the behavior(e.g., name, type, inputs, outputs, command, etc. ) 
+ - Jobs
+    - A specific task or set of tasks that run within the Azure ML environment to perform machine learning operations
+    - Example jobs:
+        - Data Processing Jobs: Cleaning, transforming, and structuring raw data into a format suitable for machine learning
+        - Training Jobs: Execute scripts or pipelines to train machine learning models
+        - Pipeline Jobs: Run a sequence of steps, each performing a specific function like data preprocessing, model training, or deployment
+        - Inference Jobs: Deploy trained models and run them against new data to generate predictions
+    - Execution Environment
+        - Jobs run on compute resources like AML(Azure Machine Learning) Compute, Kubernetes clusters, or Virtual Machines (VMs)
