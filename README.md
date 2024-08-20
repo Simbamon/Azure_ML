@@ -33,3 +33,10 @@ Work as a central hub for managing all the resources needed for machine learning
         - Inference Jobs: Deploy trained models and run them against new data to generate predictions
     - Execution Environment
         - Jobs run on compute resources like AML(Azure Machine Learning) Compute, Kubernetes clusters, or Virtual Machines (VMs)
+ - Pipelines
+    - Workflow that automates and orchestrates a sequence of steps involved in the machine learning process
+    - Example pipelines:
+        - Data Preparation: Pipelines can include steps for data ingestion, transformation, and cleaning
+        - Model Training: Steps to train models using different algorithms or configurations. These steps can be run in parallel to compare models and select the best one
+        - Model Evaluation: Steps to evaluate models based on specific metrics to determine their accuracy and performance
+        - Deployment: Deploy models as part of the pipeline, enabling automated model management and updates
