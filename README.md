@@ -40,3 +40,11 @@ Work as a central hub for managing all the resources needed for machine learning
         - Model Training: Steps to train models using different algorithms or configurations. These steps can be run in parallel to compare models and select the best one
         - Model Evaluation: Steps to evaluate models based on specific metrics to determine their accuracy and performance
         - Deployment: Deploy models as part of the pipeline, enabling automated model management and updates
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details
+
+## Reference
+ - Official Document: [Microsoft Azure Machine Learning Documentation](https://learn.microsoft.com/en-us/azure/machine-learning/?view=azureml-api-2)
+ - Github [azureml-examples by Azure](https://github.com/Azure/azureml-examples)
+ - Github [azure-mlops by datafairy-azure](https://github.com/datafairy-azure/azure-mlops)
