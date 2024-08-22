@@ -1,6 +1,9 @@
 # Azure Machine Learning
 This project utilizes Microsoft Azure AI's Machine Learning Studio to streamline the machine learning lifecycle. The goal is to process data, develop machine learning models, deploy them with endpoints, monitor performance, and automate the pipeline for continuous integration and deployment.
 
+## Description
+This GitHub repository focuses on how to utilize features in Microsoft Azure Machine Learning (AML) Studio to create an end-to-end machine learning model development pipeline. The workflow includes reading, writing, and cleaning data from Azure Data Lake Storage (ADLS) Gen2 and processing that data within AML Studio to prepare it for model training and testing. Once the model is developed, it can be deployed to the AML workspace (online or batch), and inference calls can be made to generate outcomes. These outcomes will be distributed back to ADLS Gen2 for further data analysis. All these processes will be orchestrated using YAML configurations so that the workflow can be initiated in a Microsoft Azure DevOps environment and follow best practices for DevOps principles.
+
 ## Getting Started
 Following these instructions will help you set up and run a project for development and testing purposes
 
