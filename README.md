@@ -50,4 +50,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Reference
  - Official Document: [Microsoft Azure Machine Learning Documentation](https://learn.microsoft.com/en-us/azure/machine-learning/?view=azureml-api-2)
  - Github [azureml-examples by Azure](https://github.com/Azure/azureml-examples)
+ - Github [MLOps_Workshop by MG-Microsoft](https://github.com/MG-Microsoft/MLOps_Workshop)
  - Github [azure-mlops by datafairy-azure](https://github.com/datafairy-azure/azure-mlops)
