@@ -1,4 +1,4 @@
-name: submit-azure-machine-learning-job
+name: submit-azure-machine-learning-job-full
 
 trigger:
 - none
@@ -37,8 +37,8 @@ jobs:
             displayName: Submit AzureML Job Task
             inputs:
               azureSubscription: $(service-connection)
-              workingDirectory: 'az_devops/ml_studio_simple_pipeline'
+              workingDirectory: 'az_devops/ml_studio_full_pipeline'
               scriptLocation: inlineScript
               scriptType: bash
               inlineScript: |
-                az ml job create --file simple-pipeline.yml -g $(resource-group) -w $(workspace) --query name --output tsv
+                az ml job create --file full-pipeline.yml -g $(resource-group) -w $(workspace) --query name --output tsv
