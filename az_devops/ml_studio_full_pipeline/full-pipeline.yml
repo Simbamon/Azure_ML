@@ -17,8 +17,8 @@ outputs:
 
 # <jobs>
 settings:
-  default_datastore: '$(DEFAULT_DATASTORE)'
-  default_compute: '$(DEFAULT_COMPUTE)'
+  default_datastore: azureml:workspaceblobstore
+  default_compute: azureml:az-ml-compute-cluster
   continue_on_step_failure: false
 
 jobs:
