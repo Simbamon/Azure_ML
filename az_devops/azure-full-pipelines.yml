@@ -1,0 +1,44 @@
+name: submit-azure-machine-learning-job
+
+trigger:
+- none
+
+variables:
+  service-connection: 'machine-learning-connection' # replace with your service connection name
+  resource-group: 'ml_resource_group' # replace with your resource group name
+  workspace: 'az_ml_workspace' # replace with your workspace name
+
+jobs:
+- deployment: SubmitAzureMLJob
+  displayName: Submit AzureML Job
+  timeoutInMinutes: 300
+  pool:
+    vmImage: ubuntu-latest
+  environment: 'simbamon-dev'
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+          - checkout: self
+          - task: UsePythonVersion@0
+            displayName: Use Python >=3.8
+            inputs:
+              versionSpec: '>=3.8'
+
+          - bash: |
+              set -ex
+
+              az version
+              az extension add -n ml
+            displayName: 'Add AzureML Extension'
+
+          - task: AzureCLI@2
+            name: submit_azureml_job_task
+            displayName: Submit AzureML Job Task
+            inputs:
+              azureSubscription: $(service-connection)
+              workingDirectory: 'az_devops/ml_studio_simple_pipeline'
+              scriptLocation: inlineScript
+              scriptType: bash
+              inlineScript: |
+                az ml job create --file simple-pipeline.yml -g $(resource-group) -w $(workspace) --query name --output tsv
