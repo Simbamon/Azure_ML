@@ -37,7 +37,7 @@ jobs:
             displayName: Submit AzureML Job Task
             inputs:
               azureSubscription: $(service-connection)
-              workingDirectory: './ml_studio_simple_pipeline'
+              workingDirectory: 'az_devops/ml_studio_simple_pipeline'
               scriptLocation: inlineScript
               scriptType: bash
               inlineScript: |
