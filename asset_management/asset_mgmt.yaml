@@ -8,7 +8,7 @@ inputs:
   input_data:
     type: uri_folder
 
-code: .
+code: ./input_data
 
 environment: azureml://registries/azureml/environments/python-sdk-v2/versions/20
 
