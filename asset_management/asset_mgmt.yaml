@@ -1,0 +1,20 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+name: data_management_yaml
+display_name: Data Management For AML YAML VERSION
+
+type: command
+
+inputs:
+  input_data:
+    type: uri_folder
+
+code: .
+
+environment: azureml://registries/azureml/environments/python-sdk-v2/versions/20
+
+identity:
+  type: user_identity
+
+command: >-
+  python data_mgmt.py 
+  --input_data ${{inputs.input_data}} 
