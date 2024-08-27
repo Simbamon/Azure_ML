@@ -9,8 +9,7 @@ Following these instructions will help you set up and run a project for developm
 
 ### Prerequisites
 - Microsoft Azure account
-- Azure Machine Learning Studio workspace
-- Data (e.g. tabular data like csv) to preprocess and train model
+- Data (e.g. csv or parquet) to preprocess and train model
 
 ### Installation
 Refer to the steps below to set up the necessary services in Microsoft Azure to get started with Azure Machine Learning Studio (the list contains 2 options):
@@ -52,12 +51,12 @@ Work as a central hub for managing all the resources needed for machine learning
         - Deployment: Deploy models as part of the pipeline, enabling automated model management and updates
 
 ## Azure Data Lake Storage (ADLS) Gen2
-    - Storage solution combined with Azure Blob Storage and Azure Data Lake Storage(structured and unstructured data) for big data analytics
-    - Hierarchical namespace
-        - Data can be organized and managed in directories and files, like a traditional file system
-    - Supports large-scale analytics platform like Apache Hadoop and Spark
-    - Can be integrated with Azure services like Azure Synapse Analytics, Azure Databricks, Azure HDInsight, etc.
-    - In this project, ADLS Gen2 is a central data repository for data operations such as prepping, cleaning, splitting, and etc. using Spark(PySpark)
+ - Storage solution combined with Azure Blob Storage and Azure Data Lake Storage(structured and unstructured data) for big data analytics
+ - Hierarchical namespace
+    - Data can be organized and managed in directories and files, like a traditional file system
+ - Supports large-scale analytics platform like Apache Hadoop and Spark
+ - Can be integrated with Azure services like Azure Synapse Analytics, Azure Databricks, Azure HDInsight, etc.
+ - In this project, ADLS Gen2 is a central data repository for data operations such as prepping, cleaning, splitting, and etc. using Spark(PySpark)
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details
