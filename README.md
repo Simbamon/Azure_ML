@@ -12,6 +12,13 @@ Following these instructions will help you set up and run a project for developm
 - Azure Machine Learning Studio workspace
 - Data (e.g. tabular data like csv) to preprocess and train model
 
+### Installation
+Refer to the steps below to set up the necessary services in Microsoft Azure to get started with Azure Machine Learning Studio (the list contains 2 options):
+
+#### (Option 1): Set up using Azure DevOps with YAML files
+
+#### (Option 2): Set up using GitHub Actions with Terraform files
+
 ## Azure AI Machine Learning Studio
 
 ### Workspace
