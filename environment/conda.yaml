@@ -19,3 +19,14 @@ dependencies:
     - papermill==2.4.0
     - ipython==8.26.0
     - ipykernel==6.29.5
+    - torch==1.13.0
+    - pyspark==3.4.1
+    - torchvision==0.14.0
+    - pytorch-lightning==1.6
+    - pandas==1.3.3
+    - azureml-dataset-runtime[fuse]
+    - argparse==1.4.0
+    - install-jdk
+    - shutils
+    - py4j
+    - mltable
