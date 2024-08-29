@@ -66,3 +66,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
  - Github [azureml-examples by Azure](https://github.com/Azure/azureml-examples)
  - Github [MLOps_Workshop by MG-Microsoft](https://github.com/MG-Microsoft/MLOps_Workshop)
  - Github [azure-mlops by datafairy-azure](https://github.com/datafairy-azure/azure-mlops)
+ - Github [azureml-v2-parallel-job by aldelar](https://github.com/aldelar/azureml-v2-parallel-job)
