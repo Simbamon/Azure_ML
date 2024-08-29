@@ -1,0 +1,21 @@
+name: <YOUR_CONDA_NAME>
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip=23.3
+  - pip:
+    # Base SDK v2
+    - azure-ai-ml==1.9.0
+    - azure-identity==1.17.1
+    - azureml-core==1.57.0
+    - cryptography==43.0.0
+    - certifi==2024.7.4
+    - urllib3==2.2.2
+    - paramiko==3.4.1
+    - idna==3.8
+    - tqdm==4.66.5
+    # Papermill dependencies
+    - papermill==2.4.0
+    - ipython==8.26.0
+    - ipykernel==6.29.5
