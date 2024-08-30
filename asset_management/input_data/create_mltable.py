@@ -3,14 +3,28 @@ from azure.ai.ml.constants import AssetTypes
 from azure.ai.ml import MLClient
 from azure.identity import DefaultAzureCredential
 import argparse
+import mltable
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--input_data", help="Path to input data")
 
 args = parser.parse_args()
-adls_input_data = args.input_data
+adls_directory = args.input_data
 
-print(adls_input_data)
+print(adls_directory)
+
+## read all the csv files
+path = [
+    {
+        'pattern': adls_directory + '*.csv'
+    }
+]
+
+tbl = mltable.from_delimited_files(paths=path)
+
+tbl.show()
+
+tbl.save(path='./tmp', overwrite=True)
 
 subscription_id= "<YOUR_SUBSCRIPTION_ID>"
 resource_group_name= "<YOUR_RESOURCE_GROUP_NAME>"
@@ -25,11 +39,9 @@ ml_client = MLClient(
 
 # ml_client = MLClient.from_config(DefaultAzureCredential())
 
-data_path = adls_input_data
-
 data_with_version = Data(
-    path=data_path,
-    type=AssetTypes.URI_FILE,
+    path='./tmp',
+    type=AssetTypes.MLTABLE,
     description="Tetsting with pipeline asset management",
     name="greenTaxiData_asset_mgmt",
 )
