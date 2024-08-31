@@ -59,7 +59,8 @@ Work as a central hub for managing all the resources needed for machine learning
     - Utilize Azure Machine Learning Studio's dataset versioning to track changes in MLTable, such as number of rows or columns, schema changes, etc.
     - Integration with MLFlow
         - Using MLFlow, you can log and track which version of the datasets were used for each experiment
-        - You can also log the specific paths to the datasets in ADLS Gen2 within the MLFlow experiment, using `log_param`:
+        - You can also log the specific paths to the datasets in ADLS Gen2 within the MLFlow experiment 
+        
         ```python
         import mlflow
 
