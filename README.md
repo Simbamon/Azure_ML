@@ -49,7 +49,22 @@ Work as a central hub for managing all the resources needed for machine learning
         - Model Training: Steps to train models using different algorithms or configurations. These steps can be run in parallel to compare models and select the best one
         - Model Evaluation: Steps to evaluate models based on specific metrics to determine their accuracy and performance
         - Deployment: Deploy models as part of the pipeline, enabling automated model management and updates
+ - MLTable
+    - Data abstraction used for defining how data files should be loaded/processed for any tasks(command, job, pipeline)
+    - Feature:
+        - Data Loading/Formats: Load various types of data files(CSV, JSON, Parquet, DeltaLake data, etc.) into memory as Pandas or Spark dataframes
+        - Configuration: Configure how data should be read, such as handling missing values, setting data tpyes, setting encoding formats, etc.
+        - Extracting data from paths, or reading from different storage locations can be handled by MLTable
+    - Use MLTable's function like `from_parquet_files`, `from_json_lines_files`, or `from_delimited_files` to create a MLTable from Azure Data Lake Storage (ADLS) Gen 2
+    - Utilize Azure Machine Learning Studio's dataset versioning to track changes in MLTable, such as number of rows or columns, schema changes, etc.
+    - Integration with MLFlow
+        - Using MLFlow, you can log and track which version of the datasets were used for each experiment
+        - You can also log the specific paths to the datasets in ADLS Gen2 within the MLFlow experiment, using `log_param`:
+        ```python
+        import mlflow
 
+        mlflow.log_param("adls_data_path", "<YOUR_ADLS_PATH_URI>")
+        ```
 ## Azure Data Lake Storage (ADLS) Gen2
  - Storage solution combined with Azure Blob Storage and Azure Data Lake Storage(structured and unstructured data) for big data analytics
  - Hierarchical namespace
