@@ -92,3 +92,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
  - Github [MLOps_Workshop by MG-Microsoft](https://github.com/MG-Microsoft/MLOps_Workshop)
  - Github [azure-mlops by datafairy-azure](https://github.com/datafairy-azure/azure-mlops)
  - Github [azureml-v2-parallel-job by aldelar](https://github.com/aldelar/azureml-v2-parallel-job)
+ - Github [aml_pipeline_cli by bstollnitz](https://github.com/bstollnitz/aml_pipeline_cli)
