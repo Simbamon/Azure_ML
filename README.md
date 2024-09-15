@@ -66,22 +66,35 @@ Work as a central hub for managing all the resources needed for machine learning
         - Extracting data from paths, or reading from different storage locations can be handled by MLTable
     - Use MLTable's function like `from_parquet_files`, `from_json_lines_files`, or `from_delimited_files` to create a MLTable from Azure Data Lake Storage (ADLS) Gen 2
     - Utilize Azure Machine Learning Studio's dataset versioning to track changes in MLTable, such as number of rows or columns, schema changes, etc.
-    - Integration with MLFlow
-        - Using MLFlow, you can log and track which version of the datasets were used for each experiment
-        - You can also log the specific paths to the datasets in ADLS Gen2 within the MLFlow experiment
-        ```python
-        import mlflow
-
-        mlflow.log_param("adls_data_path", "<YOUR_ADLS_PATH_URI>")
-        ```
 
 ## Azure Data Lake Storage (ADLS) Gen2
- - Storage solution combined with Azure Blob Storage and Azure Data Lake Storage(structured and unstructured data) for big data analytics
- - Hierarchical namespace
-    - Data can be organized and managed in directories and files, like a traditional file system
- - Supports large-scale analytics platform like Apache Hadoop and Spark
- - Can be integrated with Azure services like Azure Synapse Analytics, Azure Databricks, Azure HDInsight, etc.
- - In this project, ADLS Gen2 is a central data repository for data operations such as prepping, cleaning, splitting, and etc. using Spark(PySpark)
+- Storage solution combined with Azure Blob Storage and Azure Data Lake Storage(structured and unstructured data) for big data analytics
+- Hierarchical namespace
+- Data can be organized and managed in directories and files, like a traditional file system
+- Supports large-scale analytics platform like Apache Hadoop and Spark
+- Can be integrated with Azure services like Azure Synapse Analytics, Azure Databricks, Azure HDInsight, etc.
+- In this project, ADLS Gen2 is a central data repository for data operations such as prepping, cleaning, splitting, and etc. using Spark(PySpark)
+
+## MLflow in Azure Machine Learning  
+MLflow is an open-source platform to manage the complete machine learning lifecycle. In Azure Machine Learning, workspaces are designed to be MLflow-compatible, allowing you to track, experiment, and deploy machine learning models with MLFlow.
+- Since Azure ML workspace is MLflow-compatible, you can log and track your machine learning experiments using MLflow's API
+- MLflow tracking server:
+    - Azure Machine Learning automatically provides a tracking server
+    - By default, all runs executed in an Azure ML workspace are automatically tracked in the workspace w/o custom configuration
+    - You can directly log experiments and metrics using MLflow within Azure ML, and the results are stored in the Azure workspace storage
+- Automatic experiment logging:
+    - If you run any machine learning experiment using Azure's SDK or MLflow, the log will be automatically stored in Azure workspace:
+        - Models
+        - Metrics
+        - Parameters
+        - Artifacts
+- Model registration and versioning:
+    - Using MLflow, you can automatically register a trained model in Azure Machine Learning's Model Registry
+    - This will allow you to manage different versions of your models in the Azure workspace, ensuring model lineage, reproducibility, and version control
+- Deploy MLflow models:
+    - Once a model is logged and registered in your Azure workspace, it can be deployed on Azure infrastructure (ex. Azure Kubernetes Service, Azure Container Instances) using the same MLflow interface
+    - Azure Machine Learning's workspace will manage model deployment denpoints, and MLflow’s tools can handle the model serving, monitoring, and scalability
+
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details
