@@ -94,7 +94,7 @@ MLflow is an open-source platform to manage the complete machine learning lifecy
 - Deploy MLflow models:
     - Once a model is logged and registered in your Azure workspace, it can be deployed on Azure infrastructure (ex. Azure Kubernetes Service, Azure Container Instances) using the same MLflow interface
     - Azure Machine Learning's workspace will manage model deployment denpoints, and MLflow’s tools can handle the model serving, monitoring, and scalability
-
+- Basic functionalities have been addressed in this [GitHub repository](https://github.com/Simbamon/OSS_MLflow), and the MLflow features in this repository will be based on that GitHub repository
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details
