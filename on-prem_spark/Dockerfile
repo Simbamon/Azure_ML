@@ -1,6 +1,4 @@
-FROM python:3.11-bullseye as spark-base
-
-ARG SPARK_VERSION=3.4.0
+FROM python:3.11-bullseye AS spark-base
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -16,6 +14,8 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+
+
 ## Download spark and hadoop dependencies and install
 
 # Optional env variables
@@ -26,12 +26,12 @@ RUN mkdir -p ${HADOOP_HOME} && mkdir -p ${SPARK_HOME}
 WORKDIR ${SPARK_HOME}
 
 
-RUN curl https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz -o spark-${SPARK_VERSION}-bin-hadoop3.tgz \
- && tar xvzf spark-${SPARK_VERSION}-bin-hadoop3.tgz --directory /opt/spark --strip-components 1 \
- && rm -rf spark-${SPARK_VERSION}-bin-hadoop3.tgz
+RUN curl https://dlcdn.apache.org/spark/spark-3.3.1/spark-3.3.1-bin-hadoop3.tgz -o spark-3.3.1-bin-hadoop3.tgz \
+ && tar xvzf spark-3.3.1-bin-hadoop3.tgz --directory /opt/spark --strip-components 1 \
+ && rm -rf spark-3.3.1-bin-hadoop3.tgz
 
 
-FROM spark-base as pyspark
+FROM spark-base AS pyspark
 
 # Install python deps
 COPY requirements/requirements.txt .
