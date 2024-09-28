@@ -10,3 +10,6 @@ Data is crucial for machine learning model development as it serves as the found
 
 ### Serverless Spark
 Serverless Spark in Azure Machine Learning (AML) Studio is a managed service that allows us to run Apache Spark workloads without needing to manage the underlying infrastructure. Through serverless spark, we can process large-scale data by only focusing on writing and running the Spark jobs and not worrying about cluster management, scaling, or maintenance.
+
+### Integrating Azure Synapse Analytics
+You can integrate Azure Synapse Analytics into Azure Machine Learning to streamline data preparation, model training, and deployment. This integration allows us to leverage the massive data processing capabilities of Azure Synapse while move from data ingestion and preparation to model training and deployment in Azure ML, all within the Azure environment.
