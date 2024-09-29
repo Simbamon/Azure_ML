@@ -13,3 +13,6 @@ Serverless Spark in Azure Machine Learning (AML) Studio is a managed service tha
 
 ### Integrating Azure Synapse Analytics
 You can integrate Azure Synapse Analytics into Azure Machine Learning to streamline data preparation, model training, and deployment. This integration allows us to leverage the massive data processing capabilities of Azure Synapse while move from data ingestion and preparation to model training and deployment in Azure ML, all within the Azure environment.
+
+### Azure Databricks
+You can also integrate Azure Databricks to create an environment for data processing, advanced analytics, and machine learning. While Azure Databricks, a managed Apache Spark-based platform, offers data engineering and analytics capabilities, Azure Machine Learning will handle the machine learning side to build an e2e data science workflows.
