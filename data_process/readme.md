@@ -16,3 +16,6 @@ You can integrate Azure Synapse Analytics into Azure Machine Learning to streaml
 
 ### Azure Databricks
 You can also integrate Azure Databricks to create an environment for data processing, advanced analytics, and machine learning. While Azure Databricks, a managed Apache Spark-based platform, offers data engineering and analytics capabilities, Azure Machine Learning will handle the machine learning side to build an e2e data science workflows.
+
+### Custom Spark Cluster
+=====Custom solution using ray and raydp===== <- will be updated
