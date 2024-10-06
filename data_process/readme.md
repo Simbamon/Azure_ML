@@ -23,3 +23,5 @@ You can use Azure Machine Learning's compute cluster as a Spark cluster to load 
 For this repository, we will set up a Ray cluster using the Ray-on-AML open-source Python package and use the RayDP open-source Python package to establish our own Spark cluster.
 
 - Ray-on-AML: Developed by Microsoft. Unfortunately, as of today (October 5, 2024), the last update for Ray-on-AML was on December 15, 2022. If you try to use the interactive mode of Ray-on-AML, there is an issue with the incompatible packages that prevent you from using Ray on AML's compute cluster. However, when using AML's job, the Ray features are still available, allowing you to distribute data loading and processing tasks across multiple nodes.
+
+- RayDP: Open-source Python library. It is a library for distributed data processing, built on top of Ray and Apache Spark. With this library, you can integrate Spark for large-scale data processing with Ray's distributed computing capabilities. This repository uses RayDP version 1.6.1 and Spark version 3.5.1 in a Docker image to set up a Spark cluster environment on AML's compute cluster.
