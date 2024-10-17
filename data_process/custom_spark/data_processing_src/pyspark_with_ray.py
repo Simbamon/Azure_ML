@@ -9,6 +9,12 @@ def data_processing() -> None:
                          executor_cores=2,
                          executor_memory='4GB')
 
+    print("dcalling spark version...")
+    print(spark.version)
+
+    data = [("sample1", 10), ("sample2", 15), ("sample3", 20)]
+    sample_df = spark.createDataFrame(data, ["sample", "number"])
+
 def testing() -> None:
     print("printing ray version...")
     ray_version = subprocess.run("ray --version", shell=True, capture_output=True)
