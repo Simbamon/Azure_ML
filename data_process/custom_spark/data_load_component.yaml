@@ -1,0 +1,35 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+name: pyspark_load_data_from_adls
+display_name: "Loading data from ADLS Gen2 using PySpark"
+description: "Loading and processing data from ADLS Gen2 on custom spark cluster"
+
+is_deterministic: False
+type: command
+
+identity:
+  type: managed_identity
+
+inputs:
+  adls_input_path:
+    type: uri_folder
+
+outputs:
+  adls_output_path:
+    type: uri_folder
+
+code: ./data_processing_src
+
+resources:
+  instance_count: 2
+
+distribution:
+  type: mpi
+  process_count_per_instance: 1
+
+environment:
+  azureml:custom_spark_image@latest
+
+command: >-
+  python pyspark_with_ray.py
+  --adls_input_path ${{inputs.adls_input_path}}
+  --adls_output_path ${{outputs.adls_output_path}}
