@@ -27,3 +27,14 @@ For this repository, we will set up a Ray cluster using the [Ray-on-AML](https:/
 - Ray-on-AML: Developed by Microsoft. Unfortunately, as of today (October 18, 2024), the last update for Ray-on-AML was on December 15, 2022. If you try to use the interactive mode of Ray-on-AML, there is an issue with the incompatible packages that prevent you from using Ray on AML's compute cluster. However, when using AML's job, the Ray features are still available, allowing you to distribute data loading and processing tasks across multiple nodes.
 
 - RayDP: Open-source Python library. It is a library for distributed data processing, built on top of Ray and Apache Spark. With this library, you can integrate Spark for large-scale data processing with Ray's distributed computing capabilities. This repository uses RayDP version 1.6.1 and Spark version 3.5.1 in a Docker image to set up a Spark cluster environment on AML's compute cluster.
+
+### Azure Machine Learning Filesystem
+Python library built on top of Azure ADLS Gen2 that specifically deals with filesystem operation. This repository will include an use case that requires retrieving all directories from ADLS Gen2 containing table data. If you already have ADLS Gen2 set as a datastore in AML Studio, you can use `azureml.fsspec.spec.azuremachinelearningfilesystem` to locate all the necessary directories for the use case.
+
+```python
+from azureml.fsspec import AzureMachineLearningFileSystem
+
+adls_path = 'azureml://subscriptions/<YOUR_SUBSCRIPTION_ID>/resourcegroups/<YOUR_RESOURCE_GROUP>/workspaces/<YOUR_WORKSPACE_NAME>/datastore/datastorename
+fs = AzureMachineLearningFileSystem(adls_path)
+fs_list = fs.ls()
+```
