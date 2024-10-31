@@ -2,6 +2,7 @@ import subprocess
 import ray
 from ray_on_aml.core import Ray_On_AML
 import raydp
+import argparse
 
 def data_processing() -> None:
     spark = raydp.init_spark(app_name='RayDP spark cluster',
@@ -22,6 +23,9 @@ def testing() -> None:
 def main() -> None:
     # Your data processing function goes herewd
     testing()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input_path", help="input path")
 
 if __name__ == "__main__":
     ray_on_aml = Ray_On_AML()
