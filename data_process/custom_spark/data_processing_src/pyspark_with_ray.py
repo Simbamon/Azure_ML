@@ -17,6 +17,11 @@ def data_processing(input_path: str) -> None:
     sample_df = spark.createDataFrame(data, ["sample", "number"])
 
     data_from_spark = spark.read.format('parquet').option('recursiveFileLookup', 'true').option('header', 'true').load(input_path)
+    data_from_spark.createOrReplaceTempView("sample_view")
+
+    data_sql = '''
+    SELECT * FROM sample_view
+    '''
 
 def testing() -> None:
     print("printing ray version...")
