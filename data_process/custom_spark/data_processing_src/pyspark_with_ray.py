@@ -4,7 +4,8 @@ from ray_on_aml.core import Ray_On_AML
 import raydp
 import argparse
 
-def data_processing(input_path: str) -> None:
+def data_processing(input_path: str,
+                    output_path: str) -> None:
     spark = raydp.init_spark(app_name='RayDP spark cluster',
                          num_executors=2,
                          executor_cores=2,
@@ -23,6 +24,10 @@ def data_processing(input_path: str) -> None:
     SELECT * FROM sample_view
     '''
 
+    df = spark.sql(data_sql)
+    df.write.csv(output_path)
+
+
 def testing() -> None:
     print("printing ray version...")
     ray_version = subprocess.run("ray --version", shell=True, capture_output=True)
@@ -32,10 +37,12 @@ def main() -> None:
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--input_path", help="input path")
+    parser.add_argument("--output_path", help="output path")
     args = parser.parse_args()
     input_path = args.input_path
+    output_path = args.output_path
 
-    data_processing(input_path)
+    data_processing(input_path, output_path)
 
 if __name__ == "__main__":
     ray_on_aml = Ray_On_AML()
